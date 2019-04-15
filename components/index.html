@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dating App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+
+        <div class="signup">Sign Up</div>
+        <div class="login">Log In</div>
+
+        <form class="signup-form" enctype="multipart/form-data">
+            <input type="text" placeholder="Your Email Address" id="email" name="email" class="input"><br />
+            <input type="password" placeholder="Choose a Password" id="password" class="input" name="password"><br />
+            <!--file upload-->
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>File</span>
+                    <input name="myImage" type="file">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <button type="submit" class="btn1">Create account</button>
+        </form>
+
+        <div class="login-form">
+            <input type="text" placeholder="Email or Username" class="input"><br />
+            <input type="password" placeholder="Password" class="input"><br />
+            <div class="btn1">log in</div>
+            <span><a href="#">I forgot my username or password.</a></span>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+<script
+        src="https://code.jquery.com/jquery-3.4.0.js"
+        integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+        crossorigin="anonymous"></script>
+
+<script src="main.js"></script>
+</body>
+</html>
