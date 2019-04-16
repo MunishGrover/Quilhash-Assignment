@@ -13,10 +13,10 @@
         <div class="signup">Sign Up</div>
         <div class="login">Log In</div>
 
-        <form class="signup-form" enctype="multipart/form-data">
+        <form class="signup-form" action="/upload" method="POST" enctype="multipart/form-data">
             <input type="text" placeholder="Your Email Address" id="email" name="email" class="input"><br />
             <input type="password" placeholder="Choose a Password" id="password" class="input" name="password"><br />
-            <!--file upload-->
+
             <div class="file-field input-field">
                 <div class="btn">
                     <span>File</span>
@@ -48,7 +48,7 @@
         src="https://code.jquery.com/jquery-3.4.0.js"
         integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
         crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

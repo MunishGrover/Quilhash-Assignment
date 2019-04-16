@@ -12,6 +12,7 @@ const User=require('./models/User')
 mongoose.connect(db)
     .then(()=>console.log('MongoDb connected'))
     .catch(err=>console.log(err))
+//Set storage engine
 var storage = multer.diskStorage({
     destination: './public/uploads',
     filename: (req, file, cb) => {
@@ -21,34 +22,34 @@ var storage = multer.diskStorage({
 var upload = multer({storage: storage}).single('myImage');
 app.use('/',express.static('components'));
 app.post('/upload',(req,res)=>{
-console.log(req.body)
-   //  upload(req,res,(err) => {
-   //     if(err){
-   //         res.render('index',{
-   //             msg:err
-   //         })
-   //     }else {
-   //         console.log(req.body.email)
-   //            const user=new User({
-   //                email:req.body.email.value,
-   //                password:req.body.password,
-   //                img:req.file.path
-   //            });
-   //            user.save()
-   //                .then(result => {
-   //                    console.log(result);
-   //                    res.status(201).json({
-   //                        message: "User created"
-   //                    });
-   //                })
-   //                .catch(err => {
-   //             console.log(err);
-   //             res.status(500).json({
-   //                 error: err
-   //             });
-   //         });
-   //     }
-   // })
+    console.log('hello')
+    upload(req,res,(err) => {
+       if(err){
+           res.render('index',{
+               msg:err
+           })
+       }else {
+
+              const user=new User({
+                  email:req.body.email,
+                  password:req.body.password,
+                  img:req.file.path
+              });
+              user.save()
+                  .then(result => {
+                      console.log(result);
+                      res.status(201).json({
+                          message: "User created"
+                      });
+                  })
+                  .catch(err => {
+               console.log(err);
+               res.status(500).json({
+                   error: err
+               });
+           });
+       }
+   })
 });
 
 
